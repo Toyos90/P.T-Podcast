@@ -4,7 +4,7 @@ import { ref, onBeforeMount } from "vue";
 import ApiRepository from '../assets/ApiRepositories/ApiRepository'
 
 import HeadOne from "../components/HeadOne.vue";
-import ItemListEpisodesPodcast from "../components/ItemListEpidodesPopdcast.vue"
+import ItemListEpisodesPodcast from "../components/ItemListEpidodesPodcast.vue"
 
 const props = defineProps({
   id: {
