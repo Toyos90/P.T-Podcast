@@ -58,14 +58,15 @@ onBeforeMount(async () => {
               </tr>
             </thead>
             <tbody>
-              <ItemListEpisodesPodcast v-for="(episode, index) in podcast.results" :key="index" :episode="episode.data"></ItemListEpisodesPodcast>
+              <ItemListEpisodesPodcast v-for="(podcast, index) in podcast.results" :key="index" :podcast="podcast"></ItemListEpisodesPodcast>
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </main>
-</template>
+</template> 
+
 <style lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 

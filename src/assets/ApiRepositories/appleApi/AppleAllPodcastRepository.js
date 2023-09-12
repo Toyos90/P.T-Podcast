@@ -1,3 +1,5 @@
+// AppleAllPostcastRepository.js
+import axios from 'axios';
 import ApiApplePodcastPayload from "../payloads/ApiApplePodcastPayload";
 
 export default class AppleAllPostcastRepository {
@@ -6,8 +8,8 @@ export default class AppleAllPostcastRepository {
   constructor() {}
 
   async getAll() {
-    const response = await fetch(this.url);
-    const json = await response.json();
+    const response = await axios.get(this.url);
+    const json = response.data;
 
     let podcasts = [];
 
@@ -23,3 +25,4 @@ export default class AppleAllPostcastRepository {
     return podcasts;
   }
 }
+
