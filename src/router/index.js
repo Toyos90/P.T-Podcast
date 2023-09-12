@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import LoginView from '../views/LoginView.vue'
-import PetDetailsView from '../views/PetDetailsView.vue'
+import DetailsPodcastView from '../views/DetailsPodcastView.vue'
+import DetailsCapView from '../views/DetailsCapView.vue'
 
 
 
@@ -14,14 +14,14 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/PetDetailsView',
-      name: 'PetDetailsView',
-      component: PetDetailsView
+      path: '/DetailsCapView',
+      name: 'DetailsCapView',
+      component: DetailsCapView
     },
     {
-      path: '/LoginView',
-      name: 'LoginView',
-      component: LoginView
+      path: '/DetailsPodcastView',
+      name: 'DetailsPodcastView',
+      component: DetailsPodcastView
     },
   ]
 })
