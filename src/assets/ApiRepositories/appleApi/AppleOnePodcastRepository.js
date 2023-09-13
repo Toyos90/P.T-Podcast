@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Parser from 'rss-parser'; // Necesitarás instalar esta biblioteca
+import Parser from 'rss-parser'; 
 import ApiAppleOnePodcastPayload from "../payloads/ApiAppleOnePodcastPayload";
 
 export default class AppleOnePodcastRepository {
@@ -12,7 +12,7 @@ export default class AppleOnePodcastRepository {
     const url = `https://itunes.apple.com/lookup?id=${podcastId}`;
     const response = await axios.get(`https://cors-anywhere.herokuapp.com/${url}`);
     const json = response.data;
-    console.log('Feed URL:', json.results[0].feedUrl); // Imprime la URL del feed
+    console.log('Feed URL:', json.results[0].feedUrl);
     const feedUrl = json.results[0].feedUrl;
     return feedUrl;
   }
@@ -22,20 +22,19 @@ export default class AppleOnePodcastRepository {
     const response = await axios.get(`https://cors-anywhere.herokuapp.com/${this.url}`);
     const json = response.data;
 
-    console.log('Podcast data:', json); // Imprime los datos del podcast
+    console.log('Podcast data:', json); 
     return json;
   }
 
   async getEpisodes(id) {
-    // Primero, obtén la URL del feed RSS del podcast
+    
     const feedUrl = await this.getPodcastFeedUrl(id);
 
-    // Luego, utiliza rss-parser para obtener los episodios del feed RSS
+    
     let parser = new Parser();
     const feed = await parser.parseURL(`https://cors-anywhere.herokuapp.com/${feedUrl}`);
 
-    console.log('Episodes:', feed.items); // Imprime los episodios
-
+    console.log('Episodes:', feed.items); 
     let episodes = [];
     for (const episode of feed.items) {
       const episodeToAdd = new ApiAppleOnePodcastPayload(

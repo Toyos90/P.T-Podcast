@@ -1,4 +1,4 @@
-// ApiRepository.js
+
 import AppleAllPodcastRepository from "./appleApi/AppleAllPodcastRepository";
 
 export default class ApiRepository {
